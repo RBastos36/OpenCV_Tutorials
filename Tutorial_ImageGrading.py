@@ -24,7 +24,7 @@
 
 # -----------------------------------------------------
 
-# Edge Detection Problem
+# Edge Detection Problem Resolved
 
 import numpy as np
 import cv2 as cv
