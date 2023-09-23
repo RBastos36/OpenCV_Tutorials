@@ -24,6 +24,8 @@ from matplotlib import pyplot as plt
 
 minVal = 100
 maxVal = 200
+eqt = 1
+state = True
 
 
 def nothing(x):
@@ -38,6 +40,7 @@ cv.namedWindow("Edge Image")
 
 cv.createTrackbar("Max","Edge Image" , 200, 255, nothing)
 cv.createTrackbar("Min","Edge Image" , 100, 255, nothing)
+cv.createTrackbar("L2Gradient","Edge Image" , 1, 1, nothing)
 
 cv.imshow("Original Image", img)
 
@@ -49,6 +52,11 @@ while True:
 
     maxVal = cv.getTrackbarPos("Max", "Edge Image")
     minVal = cv.getTrackbarPos("Min", "Edge Image")
+    eqt = cv.getTrackbarPos("L2Gradient", "Edge Image")
+    if eqt == 1:
+        state = True
+    else:
+        state = False
 
     edges = cv.Canny(img, minVal, maxVal, L2gradient=True)
 
