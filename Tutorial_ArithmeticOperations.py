@@ -64,7 +64,7 @@ import os
 
 img_main = np.zeros((500,500,3), np.uint8)
 
-location = "/home/rantonio/Desktop/Images"
+location = "/home/rantonio/Desktop/Images2 "
 
 for file in os.listdir(location):  
     img = cv.imread(location + '/' + file)
